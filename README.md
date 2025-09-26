@@ -1,42 +1,36 @@
-# 初めてのGo言語 第2版
+# 初めての Go 言語 学習ノート
 
-<img src="https://www.marlin-arms.com/jpn/arts/books-small/learning-go2.png?v=2" width="200px">
+このリポジトリは、オライリー・ジャパンの書籍『[初めての Go 言語 第 2 版](https://www.marlin-arms.com/support/learning-go2/)』を読みながら理解を深めるための個人用学習ノートです。書籍に掲載されている例題や練習問題を動かし、自分の理解を整理することを目的としています。
 
-[オライリー・ジャパン](https://www.oreilly.co.jp/)発行の『[初めてのGo言語 第2版](https://www.marlin-arms.com/support/learning-go2/)』（2025年8月初旬発売予定）の例題および練習問題の解答例のリポジトリです。
+## このリポジトリで行うこと
 
-現在[Amazon](https://amzn.to/43ZI1Bb)、[楽天](https://a.r10.to/hUp9qc)等で予約受付中です。
+- 公式サポートページが公開している例題コードを再現しつつ読み解く
+- 練習問題を自分で実装し、答え合わせと気づきを記録する
+- Go の基本ツール（`go fmt`, `go vet`, `go build`, `go run` など）の使い方を体験的に学ぶ
 
- - 例題等のダウンロードは、ページ右上にある緑色のボタン［Code］をクリックして、［Download ZIP］をクリックするのが簡単です（もちろん、「git clone」していただいても結構です）
- - 本について詳しくは[サポートページ](https://www.marlin-arms.com/support/learning-go2/)をご覧ください。
- - 書籍には「技術的な質問は oreilly.com まで（英語で）ご連絡ください」とありますが、訳者あてお送りいただいても、できる限りお答えいたしますので[サポートページ](https://www.marlin-arms.com/support/learning-go2/)からどうぞ。
+> 書籍に関する追加情報や正誤表は [サポートページ](https://www.marlin-arms.com/support/learning-go2/) を参照しています。
 
-## ファイル構成
+## ディレクトリ構成メモ
 
-|フォルダ名  |説明         |
-|:--        |:--         |
-|example/ch01       |1章の例題    |
-|example/ch02       |2章の例題    |
-|example/ch03       |3章の例題    |
-|...        |...         |
-|example/ch15       |15章の例題   |
-|example/ch16       |16章の例題   |
-|example/ch21a      |付録Aの例題   |
-|example/ch22b      |付録Bの例題   |
+| フォルダ             | 内容の目安                         |
+| :------------------- | :--------------------------------- |
+| `example/ch01` など  | 書籍各章の例題コード               |
+| `exercise/ch01` など | 章末練習問題の解答例               |
+| `practice/ch1` など  | 書籍の内容を応用した個人の試行錯誤 |
 
+章番号が増えるごとに同じルールでフォルダを追加していきます。必要に応じてメモや補足も配置する予定です。
 
-|フォルダ名  |説明         |
-|:--        |:--         |
-|exercise/ch01       |1章の練習問題    |
-|exercise/ch02       |2章の練習問題    |
-|exercise/ch03       |3章の練習問題    |
-|...        |...         |
-|exercise/ch15       |15章の練習問題   |
-|exercise/ch16       |16章の練習問題   |
+## よく使うコマンド
 
-<!--  |exercise/ch21a      |付録Aの練習問題   |
- |exercise/ch22b      |付録Bの練習問題   | -->
+```sh
+# フォーマット、静的解析、ビルド
+make
 
+# 実行まで行いたいとき
+make run
 
+# ビルド成果物を削除したいとき
+make clean
+```
 
-
-
+各ディレクトリには Makefile を置き、`go fmt` と `go vet` を先に実行してからビルド・実行するようにしています。これにより、コードスタイルの統一と簡単な静的チェックを自動化しています。
