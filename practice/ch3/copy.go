@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+
+func main() {
+	/**
+	** copy(y, x)はxからyにコピーする
+	**/
+	x := []int{1, 2, 3, 4}
+	y := make([]int, 4)
+	num := copy(y, x)
+	fmt.Println(y, num) // [1 2 3 4] 4
+}
