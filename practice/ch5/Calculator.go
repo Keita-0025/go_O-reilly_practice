@@ -70,7 +70,7 @@ func main2 () {
 }
 
 func main3() {
-	for i := 5; i < 10; i++ {
+	for i := 7; i < 10; i++ {
 		func (j int) {
 			fmt.Println("無名関数の中で", j, "を出力")
 		}(i)
